@@ -1,7 +1,7 @@
 import { TextVariants } from "./types.ts";
 
 export const textVariants: TextVariants = {
-    default: {
+    defaults: {
         color: "black",
         fontSize: 14,
         fontWeight: "400",

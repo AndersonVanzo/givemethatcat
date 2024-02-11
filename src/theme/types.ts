@@ -27,7 +27,7 @@ type ThemeTextStyles = TextStyle & {
 };
 
 export type TextVariants = {
-    default: Partial<ThemeTextStyles>;
+    defaults: Partial<ThemeTextStyles>;
     large: Partial<ThemeTextStyles>;
     largeBold: Partial<ThemeTextStyles>;
     largeThin: Partial<ThemeTextStyles>;
