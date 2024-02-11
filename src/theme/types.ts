@@ -4,10 +4,9 @@ import { theme } from "./theme.ts";
 export type ColorVariants = {
     black: string;
     white: string;
-    blueDark: string;
-    blueMedium: string;
-    blueLight: string;
-    blueLighter: string;
+    pinkDark: string;
+    pinkMedium: string;
+    pinkLight: string;
     grayDark: string;
     grayMedium: string;
     grayLight: string;

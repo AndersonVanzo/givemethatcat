@@ -56,7 +56,7 @@ export const CustomTabBarButton = ({
                 height={BUTTON_HEIGHT}
                 style={backgroundStyle}>
                 <Icon
-                    color={theme.colors.blueMedium}
+                    color={theme.colors.pinkMedium}
                     size={BUTTON_HEIGHT * 0.6}
                     type={routeName === "Home" ? "house" : "question"}
                 />
