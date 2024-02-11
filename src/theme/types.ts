@@ -1,4 +1,5 @@
 import { TextStyle } from "react-native";
+import { theme } from "./theme.ts";
 
 export type ColorVariants = {
     black: string;
@@ -36,3 +37,5 @@ export type TextVariants = {
     smallBold: Partial<ThemeTextStyles>;
     smallThin: Partial<ThemeTextStyles>;
 };
+
+export type ThemeProps = typeof theme;
