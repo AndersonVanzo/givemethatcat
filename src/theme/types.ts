@@ -7,6 +7,9 @@ export type ColorVariants = {
     blueMedium: string;
     blueLight: string;
     blueLighter: string;
+    grayDark: string;
+    grayMedium: string;
+    grayLight: string;
 };
 
 export type SpacingVariants = {

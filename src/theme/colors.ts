@@ -8,4 +8,8 @@ export const colors: ColorVariants = {
     blueMedium: "#3F6CF2",
     blueLight: "#48A1F3",
     blueLighter: "#B3CBF6",
+
+    grayDark: "#D9D9D9",
+    grayMedium: "#EFEEEE",
+    grayLight: "#F5F5F5",
 };
