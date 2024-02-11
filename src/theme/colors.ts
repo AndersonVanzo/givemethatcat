@@ -5,7 +5,7 @@ export const colors: ColorVariants = {
     white: "#FAFAFA",
 
     pinkDark: "#8C5B65",
-    pinkMedium: "#f198ab",
+    pinkMedium: "#F198AB",
     pinkLight: "#FFCFD9",
 
     grayDark: "#D9D9D9",
