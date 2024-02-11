@@ -8,12 +8,12 @@ import Animated, {
     useSharedValue,
     withTiming,
 } from "react-native-reanimated";
-import { createBox, createText } from "@shopify/restyle";
+import { createBox } from "@shopify/restyle";
 import { ThemeProps } from "../../../theme/types.ts";
 import { theme } from "../../../theme/theme.ts";
+import { Icon } from "../../../components/Icon/Icon.tsx";
 
 const Box = createBox<ThemeProps>();
-const Text = createText<ThemeProps>();
 const AnimatedBox = Animated.createAnimatedComponent(Box);
 
 const BUTTON_HEIGHT = 48;
@@ -25,7 +25,11 @@ enum VISIBILITY {
     VISIBLE = 1,
 }
 
-export const CustomTabBarButton = ({ isFocused, onClickTabButton }: CustomTabBarButtonProps) => {
+export const CustomTabBarButton = ({
+    isFocused,
+    onClickTabButton,
+    routeName,
+}: CustomTabBarButtonProps) => {
     const backgroundVisibility = useSharedValue<VISIBILITY>(VISIBILITY.HIDDEN);
 
     const backgroundStyle = useAnimatedStyle(() => ({
@@ -53,7 +57,11 @@ export const CustomTabBarButton = ({ isFocused, onClickTabButton }: CustomTabBar
                 borderRadius={BUTTON_HEIGHT / 2}
                 height={BUTTON_HEIGHT}
                 style={backgroundStyle}>
-                <Text>btn</Text>
+                <Icon
+                    color={theme.colors.blueMedium}
+                    size={BUTTON_HEIGHT * 0.6}
+                    type={routeName === "Home" ? "house" : "question"}
+                />
             </AnimatedBox>
         </TouchableBox>
     );

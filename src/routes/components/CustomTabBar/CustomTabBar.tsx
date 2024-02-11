@@ -2,6 +2,7 @@ import { createBox } from "@shopify/restyle";
 import { ThemeProps } from "../../../theme/types.ts";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { CustomTabBarButton } from "../CustomTabBarButton/CustomTabBarButton.tsx";
+import { MainRoutesParamList } from "../../types.ts";
 
 const Box = createBox<ThemeProps>();
 
@@ -31,6 +32,7 @@ export const CustomTabBar = ({ state, navigation }: BottomTabBarProps) => {
                         <CustomTabBarButton
                             isFocused={isFocused}
                             onClickTabButton={onClickTabButton}
+                            routeName={route.name as keyof MainRoutesParamList}
                         />
                     </Box>
                 );
