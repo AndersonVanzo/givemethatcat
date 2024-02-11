@@ -1,10 +1,7 @@
-import { createBox } from "@shopify/restyle";
-import { ThemeProps } from "../../../theme/types.ts";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { CustomTabBarButton } from "../CustomTabBarButton/CustomTabBarButton.tsx";
 import { MainRoutesParamList } from "../../types.ts";
-
-const Box = createBox<ThemeProps>();
+import { Box } from "../../../components/Box/Box.tsx";
 
 export const CustomTabBar = ({ state, navigation }: BottomTabBarProps) => {
     return (

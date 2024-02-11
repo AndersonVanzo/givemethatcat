@@ -8,12 +8,10 @@ import Animated, {
     useSharedValue,
     withTiming,
 } from "react-native-reanimated";
-import { createBox } from "@shopify/restyle";
-import { ThemeProps } from "../../../theme/types.ts";
 import { theme } from "../../../theme/theme.ts";
 import { Icon } from "../../../components/Icon/Icon.tsx";
+import { Box } from "../../../components/Box/Box.tsx";
 
-const Box = createBox<ThemeProps>();
 const AnimatedBox = Animated.createAnimatedComponent(Box);
 
 const BUTTON_HEIGHT = 48;
