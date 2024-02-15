@@ -2,15 +2,22 @@ import { TouchableBox } from "../../../../components/TouchableBox/TouchableBox.t
 import { Icon } from "../../../../components/Icon/Icon.tsx";
 import { theme } from "../../../../theme/theme.ts";
 import { ActionButtonProps } from "./types.ts";
+import { ActivityIndicator } from "react-native";
 
 const BUTTON_SIZE = 64;
 
-export const ActionButton = ({ disabled, iconType, onClickActionButton }: ActionButtonProps) => {
+export const ActionButton = ({
+    disabled,
+    iconType,
+    isLoading,
+    onClickActionButton,
+}: ActionButtonProps) => {
     return (
         <TouchableBox
             alignItems={"center"}
-            backgroundColor={disabled ? "pinkLight" : "pinkMedium"}
+            backgroundColor={"pinkMedium"}
             borderRadius={BUTTON_SIZE / 2}
+            disabled={disabled}
             elevation={3}
             height={BUTTON_SIZE}
             justifyContent={"center"}
@@ -20,7 +27,11 @@ export const ActionButton = ({ disabled, iconType, onClickActionButton }: Action
             shadowOffset={{ height: 1, width: 2 }}
             shadowRadius={5}
             width={BUTTON_SIZE}>
-            <Icon color={theme.colors.white} size={BUTTON_SIZE / 2} type={iconType} />
+            {isLoading ? (
+                <ActivityIndicator size={"small"} color={theme.colors.white} />
+            ) : (
+                <Icon color={theme.colors.white} size={BUTTON_SIZE / 2} type={iconType} />
+            )}
         </TouchableBox>
     );
 };
