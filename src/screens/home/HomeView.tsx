@@ -6,7 +6,7 @@ import { HomeViewProps } from "./types.ts";
 import { CatImage } from "../../api/collections/images/types.ts";
 import { ImageLoader } from "./components/ImageLoader/ImageLoader.tsx";
 import ReactNativeBlobUtil, { ReactNativeBlobUtilConfig } from "react-native-blob-util";
-import { Alert } from "react-native";
+import { Alert, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const DOWNLOAD_DIR = ReactNativeBlobUtil.fs.dirs.DownloadDir;
@@ -61,7 +61,7 @@ export const HomeView = ({ loadNewImage }: HomeViewProps) => {
     }, []);
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={styles.safeArea}>
             <Box backgroundColor={"white"} flex={1} gap={"medium"} paddingVertical={"medium"}>
                 <Box flex={1} paddingHorizontal={"medium"}>
                     {currentImage ? (
@@ -83,3 +83,9 @@ export const HomeView = ({ loadNewImage }: HomeViewProps) => {
         </SafeAreaView>
     );
 };
+
+const styles = StyleSheet.create({
+    safeArea: {
+        flex: 1,
+    },
+});
