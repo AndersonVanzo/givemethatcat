@@ -5,7 +5,7 @@ import { ActionButtonProps } from "./types.ts";
 
 const BUTTON_SIZE = 64;
 
-export const ActionButton = ({ disabled, iconType }: ActionButtonProps) => {
+export const ActionButton = ({ disabled, iconType, onClickActionButton }: ActionButtonProps) => {
     return (
         <TouchableBox
             alignItems={"center"}
@@ -14,6 +14,7 @@ export const ActionButton = ({ disabled, iconType }: ActionButtonProps) => {
             elevation={3}
             height={BUTTON_SIZE}
             justifyContent={"center"}
+            onPress={onClickActionButton}
             shadowColor={"black"}
             shadowOpacity={0.03}
             shadowOffset={{ height: 1, width: 2 }}
