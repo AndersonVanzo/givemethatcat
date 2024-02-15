@@ -7,6 +7,7 @@ import { CatImage } from "../../api/collections/images/types.ts";
 import { ImageLoader } from "./components/ImageLoader/ImageLoader.tsx";
 import ReactNativeBlobUtil, { ReactNativeBlobUtilConfig } from "react-native-blob-util";
 import { Alert } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const DOWNLOAD_DIR = ReactNativeBlobUtil.fs.dirs.DownloadDir;
 
@@ -60,19 +61,25 @@ export const HomeView = ({ loadNewImage }: HomeViewProps) => {
     }, []);
 
     return (
-        <Box backgroundColor={"white"} flex={1} gap={"medium"} paddingVertical={"medium"}>
-            <Box flex={1} paddingHorizontal={"medium"}>
-                {currentImage ? <ImageViewer sourceImage={currentImage?.url} /> : <ImageLoader />}
+        <SafeAreaView style={{ flex: 1 }}>
+            <Box backgroundColor={"white"} flex={1} gap={"medium"} paddingVertical={"medium"}>
+                <Box flex={1} paddingHorizontal={"medium"}>
+                    {currentImage ? (
+                        <ImageViewer sourceImage={currentImage?.url} />
+                    ) : (
+                        <ImageLoader />
+                    )}
+                </Box>
+                <Box flexDirection={"row"} justifyContent={"space-evenly"}>
+                    <ActionButton
+                        disabled={imageWasDownloaded || isDownloadingImage}
+                        iconType={imageWasDownloaded ? "check" : "download"}
+                        isLoading={isDownloadingImage}
+                        onClickActionButton={downloadImage}
+                    />
+                    <ActionButton iconType={"chevron-right"} onClickActionButton={loadNextImage} />
+                </Box>
             </Box>
-            <Box flexDirection={"row"} justifyContent={"space-evenly"}>
-                <ActionButton
-                    disabled={imageWasDownloaded || isDownloadingImage}
-                    iconType={imageWasDownloaded ? "check" : "download"}
-                    isLoading={isDownloadingImage}
-                    onClickActionButton={downloadImage}
-                />
-                <ActionButton iconType={"chevron-right"} onClickActionButton={loadNextImage} />
-            </Box>
-        </Box>
+        </SafeAreaView>
     );
 };
