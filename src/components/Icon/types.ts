@@ -6,8 +6,11 @@ export type IconType =
     | "chevron-left"
     | "chevron-right"
     | "download"
+    | "github"
     | "house"
-    | "question";
+    | "linkedin"
+    | "question"
+    | "website";
 
 export type IconProps = {
     color: ColorValue;
