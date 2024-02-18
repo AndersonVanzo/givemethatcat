@@ -1,4 +1,4 @@
-package com.givemethatcat
+package com.knownt.givemethatcat
 
 import android.app.Application
 import com.facebook.react.PackageList
@@ -11,6 +11,7 @@ import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.flipper.ReactNativeFlipper
 import com.facebook.soloader.SoLoader
+import com.knownt.givemethatcat.BuildConfig
 
 class MainApplication : Application(), ReactApplication {
 
